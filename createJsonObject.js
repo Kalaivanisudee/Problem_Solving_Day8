@@ -12,19 +12,13 @@ let person ={
         pincode:"641680"
     },
     getBirthYear: function(){
-        let currenyear= new Date().getFullYear();
-        // console.log(currenyear);
-        let birthYear=currenyear-this.age;
-        return birthYear;
+        return new Date().getFullYear()- this.age;
+       
     },
     getFullAddress(){
-        let fullAddress="";
-        for(let key in this.address){
-            fullAddress +=this.address[key] + "-";
-        }
-        console.log(fullAddress);
-        return `fullAddress: ${fullAddress}`;
+        let {house,street,city,state,country,pincode}=this.address;
+        return `${house},${street}, ${city},${state},${country},${pincode}`
     }
 }
-console.log(person.getBirthYear());
-console.log(person.getFullAddress())
+console.log(person.getBirthYear());//1993
+console.log(person.getFullAddress());//12,south street, cbe,TN,IN,641680
